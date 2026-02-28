@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свадьба</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* --- ЭКРАН-ОТКРЫТКА --- */
+        .intro-screen {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at top, #430D0C, #681B19);
+            color: #DFC4A6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease;
+        }
+
+        .intro-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .intro-content p {
+            font-style: italic;
+            margin-bottom: 40px;
+            opacity: 0.85;
+        }
+
+        .intro-content button {
+            background: none;
+            border: 1px solid #100103;
+            color: #e4bac1;
+            padding: 18px 40px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 12px;
+        }
+
+        .intro-content button:hover {
+            background: #DFC4A6;
+            color: #0e0e0e;
+        }
+
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* --- КНОПКА МУЗЫКИ --- */
+        .music-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.6);
+            border: 1px solid #7a1e2d;
+            color: #7a1e2d;
+            padding: 10px 16px;
+            font-size: 12px;
+            cursor: pointer;
+            z-index: 1000;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ======= ЭКРАН-ОТКРЫТКА ======= -->
+<div class="intro-screen" id="intro">
+    <div class="intro-content">
+        <h1>Приглашение на свадьбу</h1>
+        <p>Иван и Мария</p>
+        <button id="enter">Открыть приглашение</button>
+    </div>
+</div>
+
+<!-- ======= ВСЁ ТВОЁ СОДЕРЖИМОЕ БЕЗ ИЗМЕНЕНИЙ ======= -->
+
+<section class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>Иван — да — Марья</h1>
+        <div class="divider"></div>
+        <p class="subtitle">
+            Долгожданное событие, вы о нём спрашивали, мы ждали — и вот мы здесь
+        </p>
+
+        <div class="hero-photos">
+            <div class="photo-frame"><img src="images/photo1.jpg" alt=""></div>
+            <div class="photo-frame"><img src="images/photo2.jpg" alt=""></div>
+            <div class="photo-frame"><img src="images/photo3.jpg" alt=""></div>
+        </div>
+    </div>
+</section>
+<!-- 1. ДАТА -->
+<section class="section reveal date-section">
+    <div class="container">
+        <h2>Дата</h2>
+        <p class="date-value">07.06.2026</p>
+        <div class="countdown" id="countdown"></div>
+    </div>
+</section>
+
+<!-- 2. ПРОГРАММА -->
+<section class="section reveal program-section">
+    <div class="container">
+        <h2>Программа</h2>
+
+        <ul class="program">
+            <li><span>01</span><p>17:30 — Сбор гостей, знакомство, фуршет</p></li>
+            <li><span>02</span><p>18:30 — Церемония у входа в усадьбу</p></li>
+            <li><span>03</span><p>19:00 — Ужин</p></li>
+            <li><span>04</span><p>23:00 — ДиСкОтЕкА</p></li>
+            <li><span>05</span><p>24:00 — По домам, дохлёбываем и расход</p></li>
+        </ul>
+    </div>
+</section>
+
+<!-- 3. ЛОКАЦИЯ -->
+<section class="section reveal">
+    <div class="container">
+        <h2>Локация</h2>
+        <p>Roden Manor, Старосадский переулок, 5/8, Москва</p>
+        <a href="https://yandex.com/maps/-/CPaaA6l2" 
+        target="_blank" 
+        class="map-button">
+        Открыть в Яндекс Картах
+</a>
+    </div>
+</section>
+
+<!-- 4. ДЕТАЛИ -->
+<section class="section dark reveal">
+    <div class="container">
+        <h2>Детали</h2>
+
+        <div class="details">
+            <div class="detail-item">Дарите деньги</div>
+            <div class="detail-item">Не деньги тоже дарите, но купите за деньги</div>
+            <div class="detail-item">Если не потратили деньги — всё равно приходите</div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. ДРЕСС-КОД -->
+<section class="section reveal">
+    <div class="container">
+        <h2>Дресс-код</h2>
+
+        <div class="dresscode">
+            <div class="color"></div><div class="color"></div>
+            <div class="color"></div><div class="color"></div>
+            <div class="color"></div><div class="color"></div>
+            <div class="color"></div><div class="color"></div>
+	    <div class="color"></div><div class="color"></div>
+        </div>
+
+        <p>Это не требование, а рекомендация, но, пожалуйста, не оттеняйте невесту блистательным белым нарядом</p>
+    </div>
+</section>
+
+<!-- 6. АНКЕТА -->
+<section class="section dark reveal">
+    <div class="container">
+        <h2>Анкета</h2>
+        <a href="https://forms.gle/m62s1GfyEQEuGTxV6" class="button" target="_blank">
+            Заполнить анкету
+        </a>
+    </div>
+</section>
+
+<!-- 7. КОНТАКТЫ -->
+<section class="section reveal">
+    <div class="container">
+        <h2>Контакты</h2>
+        <div class="contacts">
+            <p><strong>Жених:</strong> +7 916 168-00-42 · tg: @ivvers</p>
+            <p><strong>Невеста:</strong> +7 916 920-50-69 · tg: @Mashka_me</p>
+            <p><strong>Организатор:</strong> +7 977 356-41-54 · tg: @LinaOzel</p>
+        </div>
+    </div>
+</section>
+
+<!-- 8. ДО ВСТРЕЧИ -->
+<section class="section dark reveal">
+    <div class="container">
+        <h2>До встречи</h2>
+        <p>Мы очень ждём каждого из вас и будем счастливы разделить этот день вместе</p>
+    </div>
+</section>
+
+<footer>
+    <p>Made by “The Vershinins Inc.” & ChatGPT</p>
+</footer>
+
+<!-- ======= МУЗЫКА ======= -->
+<audio id="bg-music" loop>
+    <source src="music/theme.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-toggle" id="musicToggle" style="display:none;">
+    Выключить музыку
+</button>
+
+<script>
+const intro = document.getElementById('intro');
+const enterBtn = document.getElementById('enter');
+const music = document.getElementById('bg-music');
+const toggleBtn = document.getElementById('musicToggle');
+
+enterBtn.addEventListener('click', () => {
+
+    music.volume = 0.6;
+
+    music.play().then(() => {
+        toggleBtn.style.display = 'block';
+    });
+
+    intro.classList.add('hidden');
+
+});
+
+/* КНОПКА ВКЛ / ВЫКЛ */
+toggleBtn.addEventListener('click', () => {
+
+    if (music.paused) {
+        music.play();
+        toggleBtn.textContent = "Выключить музыку";
+    } else {
+        music.pause();
+        toggleBtn.textContent = "Включить музыку";
+    }
+
+});
+</script>
+
+<!-- Reveal анимации остаются -->
+<script>
+const reveals = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, { threshold: 0.15 });
+
+reveals.forEach(el => observer.observe(el));
+</script>
+
+// ====== СЧЕТЧИК ДО СОБЫТИЯ ======
+<script>
+const countdownElement = document.getElementById("countdown");
+
+// 7 июня 2026, 17:30 по Москве (UTC+3)
+const weddingDate = new Date("2026-06-07T17:30:00+03:00");
+
+function updateCountdown() {
+    const now = new Date();
+    const diff = weddingDate - now;
+
+    if (diff <= 0) {
+        countdownElement.innerHTML = "Торжество началось ❤️";
+        return;
+    }
+
+    const seconds = Math.floor((diff / 1000) % 60);
+    const minutes = Math.floor((diff / 1000 / 60) % 60);
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const daysTotal = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+    const months = Math.floor(daysTotal / 30);
+    const weeks = Math.floor((daysTotal % 30) / 7);
+    const days = Math.floor((daysTotal % 30) % 7);
+
+    countdownElement.innerHTML = `
+        До торжества осталось <br>
+        <strong>
+        ${months} мес 
+        ${weeks} нед 
+        ${days} д 
+        ${hours} ч 
+        ${minutes} мин 
+        ${seconds} сек
+        </strong>
+    `;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+
+</body>
+</html>
