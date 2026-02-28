@@ -103,14 +103,14 @@ body {
 .section {
     position: relative;
     padding: 90px 20px;
-    background: linear-gradient(180deg, #FFF1DF 0%, #DFC4A6 100%);
-    color: #430D0C;
+    background: linear-gradient(180deg, #430D0C 0%, #430D0C 100%);
+    color: #DFC4A6;
     text-align: center;
 }
 
 .section.dark {
-    background: linear-gradient(180deg, #430D0C 0%, #430D0C 100%);
-    color: #DFC4A6;
+    background: linear-gradient(180deg, #DFC4A6 0%, #DFC4A6 100%);
+    color: #430D0C;
 }
 
 .section h2 {
@@ -160,8 +160,8 @@ body {
 .date-section {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(180deg, #430D0C 0%, #430D0C 100%);
-    color: #DFC4A6;
+    background: linear-gradient(180deg, #DFC4A6 0%, #DFC4A6 100%);
+    color: #430D0C;
 }
 
 .date-section::before {
@@ -421,7 +421,7 @@ footer {
         background: url("images/1.png") no-repeat left bottom;
         background-size: contain;
 
-        opacity: 0.35; /* ↓ делаем воздушной */
+        opacity: 0.00; /* ↓ делаем воздушной */
         z-index: 1;
         pointer-events: none;
     }
