@@ -397,10 +397,30 @@ footer {
         letter-spacing: 4px;
     }
 
-    .date-section::before,
+@media (max-width: 768px) {
+
+    .date-section {
+        overflow: hidden;
+    }
+
+    .date-section::before {
+        width: 240px;
+        height: 320px;
+        left: -60px;
+        bottom: -40px;
+        background-position: left bottom;
+        opacity: 0.85;
+    }
+
     .date-section::after {
-        width: 130px;
-        height: 130px;
-        opacity: 0.7;
+        width: 240px;
+        height: 320px;
+        right: -60px;
+        top: -40px;
+        background-position: right top;
+        opacity: 0.85;
     }
 }
+    }
+}
+
