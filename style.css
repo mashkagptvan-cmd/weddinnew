@@ -12,7 +12,7 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Gentium Book Plus', serif;
+    font-family: 'Prata';
     background: #1a1414;
     color: #f4eae6;
     line-height: 1.8;
@@ -31,7 +31,7 @@ body {
 ===================================================== */
 
 .hero {
-    background: linear-gradient(180deg, #681B19 0%, #430D0C 100%);
+    background: linear-gradient(180deg, #430D0C 0%, #430D0C 100%);
     padding: 120px 20px 90px;
     text-align: center;
 }
@@ -40,16 +40,17 @@ body {
     max-width: 900px;
     margin: 0 auto;
     animation: fadeUp 1.2s ease forwards;
+    color: #DFC4A6;
 }
 
 .hero h1 {
-    font-style: Gentium Book Plus;
+    font-style: Prata;
     font-size: 44px;
     margin-bottom: 12px;
 }
 
 .subtitle {
-    font-style: Gentium Book Plus;
+    font-style: Viaoda Libre;
     font-size: 20px;
     max-width: 600px;
     margin: 0 auto;
@@ -108,7 +109,7 @@ body {
 }
 
 .section.dark {
-    background: linear-gradient(180deg, #681B19 0%, #430D0C 100%);
+    background: linear-gradient(180deg, #430D0C 0%, #430D0C 100%);
     color: #DFC4A6;
 }
 
@@ -159,7 +160,7 @@ body {
 .date-section {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(180deg, #430D0C 0%, #681B19 100%);
+    background: linear-gradient(180deg, #430D0C 0%, #430D0C 100%);
     color: #DFC4A6;
 }
 
@@ -168,8 +169,8 @@ body {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 240px;
-    height: 240px;
+    width: 450px;
+    height: 550px;
     background: url("images/1.png") no-repeat left bottom;
     background-size: contain;
     pointer-events: none;
@@ -180,9 +181,9 @@ body {
     position: absolute;
     right: 0;
     top: 0;
-    width: 240px;
-    height: 240px;
-    background: url("images/2.png") no-repeat right top;
+    width: 400px;
+    height: 700px;
+    background: url("images/2.png") no-repeat right bottom;
     background-size: contain;
     pointer-events: none;
 }
