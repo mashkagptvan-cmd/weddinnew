@@ -87,31 +87,26 @@
         <div class="countdown">
             <div class="countdown-grid">
                 <div class="time-box">
-                    <span id="months">00</span>
-                    <small>мес</small>
+                    <span id="days">000</span>
+                    <small>Дней</small>
                 </div>
-                <div class="time-box">
-                    <span id="weeks">00</span>
-                    <small>нед</small>
-                </div>
-                <div class="time-box">
-                    <span id="days">00</span>
-                    <small>дн</small>
-                </div>
+
                 <div class="time-box">
                     <span id="hours">00</span>
-                    <small>час</small>
+                    <small>Часов</small>
                 </div>
+
                 <div class="time-box">
                     <span id="minutes">00</span>
-                    <small>мин</small>
+                    <small>Минут</small>
                 </div>
+
                 <div class="time-box">
                     <span id="seconds">00</span>
-                    <small>сек</small>
+                    <small>Секунд</small>
                 </div>
             </div>
-        </div>
+</div>
 
     </div>
 </section>
@@ -255,11 +250,10 @@ reveals.forEach(el => observer.observe(el));
 </script>
 
 <script>
-/* СЧЕТЧИК */
 const weddingDate = new Date("2026-06-07T17:30:00+03:00");
 
-function pad(num) {
-    return num.toString().padStart(2, '0');
+function pad(num, size = 2) {
+    return num.toString().padStart(size, '0');
 }
 
 function updateCountdown() {
@@ -274,15 +268,9 @@ function updateCountdown() {
     const seconds = Math.floor((diff / 1000) % 60);
     const minutes = Math.floor((diff / 1000 / 60) % 60);
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const daysTotal = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-    const months = Math.floor(daysTotal / 30);
-    const weeks = Math.floor((daysTotal % 30) / 7);
-    const days = Math.floor((daysTotal % 30) % 7);
-
-    document.getElementById("months").textContent = pad(months);
-    document.getElementById("weeks").textContent = pad(weeks);
-    document.getElementById("days").textContent = pad(days);
+    document.getElementById("days").textContent = pad(days, 2);
     document.getElementById("hours").textContent = pad(hours);
     document.getElementById("minutes").textContent = pad(minutes);
     document.getElementById("seconds").textContent = pad(seconds);
