@@ -13,57 +13,36 @@ html {
 body {
     margin: 0;
     font-family: 'Gentium Book Plus', serif;
-    background-color: #0e0e0e;
-    color: #eaeaea;
+    background: #1a1414;
+    color: #f4eae6;
     line-height: 1.8;
     font-size: 18px;
 }
 
-/* Центрирующий контейнер для всех секций */
 .container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 12px;
+    padding: 0 16px;
     text-align: center;
 }
 
 /* =====================================================
-   ШАПКА (HERO)
+   HERO
 ===================================================== */
 
-/* старое заглавие .hero {
-    position: relative;
-    background: url("images/hero.png") center / cover no-repeat;
-    padding: 90px 20px 70px;
-    text-align: center;
-}*/
-
 .hero {
-    position: relative;
-    background: #681B19; /* просто цвет, без картинки */
+    background: linear-gradient(180deg, #681B19 0%, #816969 100%);
     padding: 120px 20px 90px;
     text-align: center;
 }
 
-/*.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.65);
-}*/
-
-.hero-overlay {
-    display: none; /* полностью убираем затемнение */
-}
-
 .hero-content {
-    position: relative;
     max-width: 900px;
     margin: 0 auto;
     animation: fadeUp 1.2s ease forwards;
 }
 
 .hero h1 {
-    font-family: 'Gentium Book Plus', serif;
     font-size: 44px;
     margin-bottom: 12px;
 }
@@ -77,8 +56,8 @@ body {
 
 .divider {
     width: 70px;
-    height: 1px;
-    background-color: #7a1e2d;
+    height: 2px;
+    background-color: #DFC4A6;
     margin: 26px auto;
 }
 
@@ -94,43 +73,25 @@ body {
 }
 
 /* =====================================================
-   ФОТО В ШАПКЕ
+   ФОТО
 ===================================================== */
 
-.hero-photos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
+.hero-photos.single-photo {
+    display: flex;
+    justify-content: center;
     margin-top: 40px;
 }
 
 .photo-frame {
-    position: relative;
-    aspect-ratio: 3 / 4;
+    width: 320px;
+    border-radius: 24px;
     overflow: hidden;
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .photo-frame img {
-    position: absolute;
-    inset: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.photo-frame::after {
-    content: "";
-    position: absolute;
-    inset: 6px;
-    border: /*1px solid rgba(122,30,45,0.5)*/ none;
-    border-radius: 10px;
-}
-
-.hero-photos .photo-frame:nth-child(1),
-.hero-photos .photo-frame:nth-child(3) {
-    transform: translateY(12px);
+    display: block;
 }
 
 /* =====================================================
@@ -139,40 +100,18 @@ body {
 
 .section {
     position: relative;
-    padding: 80px 20px;
-    background: linear-gradient(
-        180deg,
-        #FFF1DF 0%,
-        #DFC4A6 100%        
-    );
-    overflow: hidden;
-    text-align: center;
+    padding: 90px 20px;
+    background: linear-gradient(180deg, #f7e5dd 0%, #e8cfc2 100%);
     color: #430D0C;
+    text-align: center;
 }
 
 .section.dark {
-    background: linear-gradient(
-        180deg,
-        #681B19 0%,
-        #430D0C 100%
-    );
-    color: #DFC4A6;
-}
-
-.section::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-        circle at top,
-        rgba(122,30,45,0.08),
-        transparent 65%
-    );
-    pointer-events: none;
+    background: linear-gradient(180deg, #681B19 0%, #816969 100%);
+    color: #f4eae6;
 }
 
 .section h2 {
-    font-family: 'Gentium Book Plus', serif;
     font-size: 34px;
     margin-bottom: 10px;
 }
@@ -182,7 +121,7 @@ body {
     display: block;
     width: 52px;
     height: 2px;
-    background-color: #7a1e2d;
+    background-color: currentColor;
     margin: 22px auto;
 }
 
@@ -191,20 +130,29 @@ body {
 ===================================================== */
 
 .date-value {
-    font-family: 'Gentium Book Plus', serif;
     font-size: 46px;
     letter-spacing: 6px;
-    color: #430D0C;
     margin-top: 20px;
 }
 
+.countdown {
+    margin-top: 30px;
+    padding: 20px 30px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 24px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.countdown strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+/* Декоративные изображения */
+
 .date-section {
-    background: linear-gradient(
-        180deg,
-        #FFF1DF 0%,
-        #DFC4A6 100%        
-    );
-    color: #430D0C;
     position: relative;
     overflow: hidden;
 }
@@ -212,11 +160,10 @@ body {
 .date-section::before {
     content: "";
     position: absolute;
+    left: 0;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-900px); /* половина max-width контейнера */
-    width: 300px;
-    height: 300px;
+    width: 240px;
+    height: 240px;
     background: url("images/1.png") no-repeat left bottom;
     background-size: contain;
     pointer-events: none;
@@ -225,12 +172,11 @@ body {
 .date-section::after {
     content: "";
     position: absolute;
+    right: 0;
     top: 0;
-    left: 50%;
-    transform: translateX(550px);  /* сдвиг вправо от центра */
-    width: 300px;
-    height: 550px;
-    background: url("images/2.png") no-repeat right bottom;
+    width: 240px;
+    height: 240px;
+    background: url("images/2.png") no-repeat right top;
     background-size: contain;
     pointer-events: none;
 }
@@ -239,62 +185,35 @@ body {
    ПРОГРАММА
 ===================================================== */
 
+.program-section {
+    position: relative;
+}
+
+.program-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 .program {
     list-style: none;
     padding: 0;
-    max-width: 520px;
     margin: 40px auto 0;
-    position: relative;
     text-align: left;
-}
-
-.program::before {
-    content: "";
-    position: absolute;
-    left: 22px;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background-color: rgba(122,30,45,0.4);
 }
 
 .program li {
     display: flex;
     gap: 20px;
-    padding: 20px 0 20px 40px;
-    border-bottom: 1px solid rgba(69, 11, 3, 0.97);
+    padding: 22px 0 22px 40px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
     position: relative;
-    border-radius: 12px;
 }
 
 .program span {
     position: absolute;
     left: 0;
-    color: #7a1e2d;
-    font-family: 'Playfair Display', serif;
     font-size: 22px;
-}
-
-.program-section {
-    background: #681B19;
-    color: #DFC4A6;
-    position: relative;
-    padding: 120px 20px;
-}
-
-.program-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url("images/3.png") center center no-repeat;
-    background-size: contain;
-    pointer-events: none;
-    opacity: 0.9;
-}
-
-.program-section .container {
-    position: relative;
-    z-index: 2;
+    font-family: 'Playfair Display', serif;
 }
 
 /* =====================================================
@@ -310,9 +229,9 @@ body {
 
 .detail-item {
     padding: 28px;
-    border: 1px solid #7a1e2d;
-    background: rgba(0, 0, 0, 0);
-    border-radius: 18px;
+    border-radius: 24px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(4px);
 }
 
 /* =====================================================
@@ -344,54 +263,68 @@ body {
 .color:nth-child(9) { background: #D7B1B1; }
 .color:nth-child(10) { background: #E7DAD4; }
 
+
 /* =====================================================
-   КНОПКА
+   КНОПКИ
 ===================================================== */
 
 .button {
     display: inline-block;
     padding: 18px 42px;
-    border: 1px solid #7a1e2d;
-    color: #7a1e2d;
+    border-radius: 30px;
+    background: #681B19;
+    color: #ffffff;
     text-decoration: none;
     letter-spacing: 2px;
-    transition: all 0.3s ease;
-    border-radius: 18px;
+    transition: 0.3s ease;
 }
 
 .button:hover {
-    background-color: #7a1e2d;
-    color: #0e0e0e;
+    background: #816969;
+}
+
+/* Кнопка карты */
+
+.map-button {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 22px;
+    border-radius: 30px;
+    background: #816969;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.map-button:hover {
+    background: #681B19;
 }
 
 /* =====================================================
-   КНОПКА УПРАВЛЕНИЯ МУЗЫКОЙ
+   КНОПКА МУЗЫКИ
 ===================================================== */
 
-.music-control {
+.music-toggle {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: rgba(0,0,0,0.6);
-    border: 1px solid #7a1e2d;
-    color: #7a1e2d;
+    background: rgba(0,0,0,0.7);
+    border: none;
+    color: #ffffff;
     padding: 12px 18px;
-    cursor: pointer;
-    font-family: 'Cormorant Garamond', serif;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(6px);
-    z-index: 999;
     border-radius: 30px;
+    cursor: pointer;
+    z-index: 999;
+    transition: 0.3s ease;
 }
 
-.music-control:hover {
-    background: #7a1e2d;
-    color: #0e0e0e;
+.music-toggle:hover {
+    background: #816969;
 }
 
 /* =====================================================
-   КОНТАКТЫ И ПОДВАЛ
+   КОНТАКТЫ И FOOTER
 ===================================================== */
 
 .contacts p {
@@ -401,12 +334,13 @@ body {
 footer {
     padding: 30px;
     font-size: 15px;
-    color: #999;
+    color: #aaa;
     text-align: center;
+    background: #1a1414;
 }
 
 /* =====================================================
-   АНИМАЦИИ ПРИ ПРОКРУТКЕ
+   АНИМАЦИЯ ПРОКРУТКИ
 ===================================================== */
 
 .reveal {
@@ -438,16 +372,8 @@ footer {
         font-size: 34px;
     }
 
-    .subtitle {
-        font-size: 19px;
-    }
-
-    .hero-photos {
-        grid-template-columns: 1fr;
-    }
-
     .section {
-        padding: 60px 16px;
+        padding: 70px 16px;
     }
 
     .dresscode {
@@ -455,24 +381,14 @@ footer {
     }
 
     .date-value {
-        font-size: 38px;
+        font-size: 36px;
         letter-spacing: 4px;
     }
-}
-.map-button {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 8px 18px;
-    font-size: 14px;
-    border-radius: 20px;
-    background: rgba(0,0,0,0.3);
-    color: #ffffff;
-    text-decoration: none;
-    border: 1px solid #ffffff;
-    transition: 0.3s ease;
-}
 
-.map-button:hover {
-    background: #ffffff;
-    color: #6e5555;
+    .date-section::before,
+    .date-section::after {
+        width: 130px;
+        height: 130px;
+        opacity: 0.7;
+    }
 }
