@@ -83,7 +83,36 @@
     <div class="container">
         <h2>Дата</h2>
         <p class="date-value">07.06.2026</p>
-        <div class="countdown" id="countdown"></div>
+
+        <div class="countdown">
+            <div class="countdown-grid">
+                <div class="time-box">
+                    <span id="months">00</span>
+                    <small>мес</small>
+                </div>
+                <div class="time-box">
+                    <span id="weeks">00</span>
+                    <small>нед</small>
+                </div>
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <small>дн</small>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <small>час</small>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <small>мин</small>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <small>сек</small>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -227,15 +256,18 @@ reveals.forEach(el => observer.observe(el));
 
 <script>
 /* СЧЕТЧИК */
-const countdownElement = document.getElementById("countdown");
 const weddingDate = new Date("2026-06-07T17:30:00+03:00");
+
+function pad(num) {
+    return num.toString().padStart(2, '0');
+}
 
 function updateCountdown() {
     const now = new Date();
     const diff = weddingDate - now;
 
     if (diff <= 0) {
-        countdownElement.innerHTML = "Торжество началось ❤️";
+        document.querySelector(".countdown").innerHTML = "Торжество началось ❤️";
         return;
     }
 
@@ -248,17 +280,12 @@ function updateCountdown() {
     const weeks = Math.floor((daysTotal % 30) / 7);
     const days = Math.floor((daysTotal % 30) % 7);
 
-    countdownElement.innerHTML = `
-        До торжества осталось <br>
-        <strong>
-        ${months} мес 
-        ${weeks} нед 
-        ${days} д 
-        ${hours} ч 
-        ${minutes} мин 
-        ${seconds} сек
-        </strong>
-    `;
+    document.getElementById("months").textContent = pad(months);
+    document.getElementById("weeks").textContent = pad(weeks);
+    document.getElementById("days").textContent = pad(days);
+    document.getElementById("hours").textContent = pad(hours);
+    document.getElementById("minutes").textContent = pad(minutes);
+    document.getElementById("seconds").textContent = pad(seconds);
 }
 
 setInterval(updateCountdown, 1000);
