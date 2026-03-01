@@ -114,7 +114,7 @@ body {
 }
 
 .section h2 {
-    font-style: Gentium Book Plus;
+    font-style: Prata;
     font-size: 34px;
     margin-bottom: 10px;
 }
@@ -133,7 +133,7 @@ body {
 ===================================================== */
 
 .date-value {
-    font-style: Gentium Book Plus;
+    font-style: Prata;
     font-size: 46px;
     letter-spacing: 6px;
     margin-top: 20px;
@@ -185,17 +185,6 @@ body {
     color: #430D0C;
 }
 
-.date-section::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 450px;
-    height: 550px;
-    background: url("images/1.png") no-repeat left bottom;
-    background-size: contain;
-    pointer-events: none;
-}
 
 .date-section::after {
     content: "";
@@ -222,8 +211,20 @@ body {
     margin: 0 auto;
 }
 
+.program-section::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 450px;
+    height: 550px;
+    background: url("images/1.png") no-repeat left bottom;
+    background-size: contain;
+    pointer-events: none;
+}
+
 .program {
-    font-style: Gentium Book Plus;
+    font-style: Prata;
     list-style: none;
     padding: 0;
     margin: 40px auto 0;
@@ -231,7 +232,7 @@ body {
 }
 
 .program li {
-    font-style: Gentium Book Plus;
+    font-style: Prata;
     display: flex;
     gap: 20px;
     padding: 22px 0 22px 40px;
@@ -240,11 +241,42 @@ body {
 }
 
 .program span {
-    font-style: Gentium Book Plus;
+    font-style: Prata;
     position: absolute;
     left: 0;
     font-size: 22px;
     font-family: 'Playfair Display', serif;
+}
+
+
+/* =====================================================
+   Локация
+===================================================== */
+.section-location {
+    position: relative;
+    padding: 90px 20px;
+    background: linear-gradient(180deg, #430D0C 0%, #430D0C 100%);
+    color: #DFC4A6;
+    text-align: center;
+}
+
+
+.section-location h2 {
+    font-style: Prata;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.section-location h2::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 350px;
+    height: 600px;
+    background: url("images/3.png") no-repeat right top;
+    background-size: contain;
+    pointer-events: none;
 }
 
 /* =====================================================
@@ -252,7 +284,7 @@ body {
 ===================================================== */
 
 .details {
-    font-style: Gentium Book Plus;
+    font-style: Prata;
     display: grid;
     gap: 22px;
     max-width: 720px;
@@ -260,7 +292,7 @@ body {
 }
 
 .detail-item {
-    font-style: Gentium Book Plus;
+    font-style: Prata;
     padding: 28px;
     border-radius: 24px;
     background: rgba(255,255,255,0.1);
@@ -435,17 +467,17 @@ footer {
     }
 
     /* 1.png — мягкий фон */
-    .date-section::before {
+    .program-section::before {
         content: "";
         position: absolute;
-        width: 240px;
-        height: 320px;
+        width: 120px;
+        height: 160px;
         left: -60px;
         bottom: -40px;
         background: url("images/1.png") no-repeat left bottom;
         background-size: contain;
 
-        opacity: 0.00; /* ↓ делаем воздушной */
+        opacity: 0.75; /* ↓ делаем воздушной */
         z-index: 1;
         pointer-events: none;
     }
@@ -462,6 +494,24 @@ footer {
         background-size: contain;
 
         transform: rotate(-45deg) scaleX(-1);
+        opacity: 0.75;
+
+        z-index: 1;
+        pointer-events: none;
+    }
+
+        /* 2.png — поворот + зеркалирование */
+    .section-location::after {
+        content: "";
+        position: absolute;
+        width: 240px;
+        height: 320px;
+        right: -60px;
+        top: -40px;
+        background: url("images/3.png") no-repeat center;
+        background-size: contain;
+
+        /*transform: rotate(-45deg) scaleX(-1);*/
         opacity: 0.75;
 
         z-index: 1;
