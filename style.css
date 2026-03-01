@@ -338,7 +338,7 @@ body {
 
 .dresscode {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 14px;
     max-width: 420px;
     margin: 40px auto;
@@ -351,15 +351,13 @@ body {
 }
 
 .color:nth-child(1) { background: #130202; }
-.color:nth-child(2) { background: #500E0E; }
-.color:nth-child(3) { background: #421E08; }
-.color:nth-child(4) { background: #634C4C; }
-.color:nth-child(5) { background: #8B8874; }
-.color:nth-child(6) { background: #BDB89C; }
-.color:nth-child(7) { background: #9D806E; }
-.color:nth-child(8) { background: #FDF5D4; }
-.color:nth-child(9) { background: #D7B1B1; }
-.color:nth-child(10) { background: #E7DAD4; }
+.color:nth-child(2) { background: #B1B0A7; }
+.color:nth-child(3) { background: #603A2A; }
+.color:nth-child(4) { background: #D8C8A3; }
+.color:nth-child(5) { background: #424832; }
+.color:nth-child(6) { background: #918958; }
+.color:nth-child(7) { background: #D7B1B1; }
+.color:nth-child(8) { background: #E7DAD4; }
 
 
 /* =====================================================
