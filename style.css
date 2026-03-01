@@ -637,12 +637,12 @@ footer {
     }
 
     .contacts::after {
-        width: 90px;
-        height: 115px;
+        width: 100px;
+        height: 130px;
         opacity: 1;
         right: 0;
         top: 0;
-        transform: translate(-141px, -100px) ;
+        transform: translate(-200px, -110px) rotate(-45deg);
     }
 
     .section-questionary::after {
@@ -654,4 +654,5 @@ footer {
         transform: translate(30px, -125px) rotate(45deg) scaleX(-1) ;
     }
 }
+
 
