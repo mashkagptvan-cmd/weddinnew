@@ -12,7 +12,8 @@
 .intro-screen {
     position: fixed;
     inset: 0;
-    background: radial-gradient(circle at top, #430D0C, #681B19);
+    /*background: radial-gradient(circle at top, #430D0C, #681B19);*/
+    background: url("images/intropic.jpg") center / cover no-repeat;
     color: #DFC4A6;
     display: flex;
     align-items: center;
@@ -27,9 +28,9 @@
 .intro-content p { margin-bottom: 40px; opacity: 0.85; }
 
 .intro-content button {
-    background: none;
+    background: #DFC4A6;
     border: 1px solid #100103;
-    color: #e4bac1;
+    color: #430D0C;
     padding: 18px 40px;
     letter-spacing: 2px;
     cursor: pointer;
@@ -87,7 +88,7 @@
         <div class="countdown">
             <div class="countdown-grid">
                 <div class="time-box">
-                    <span id="days">000</span>
+                    <span id="days">00</span>
                     <small>Дней</small>
                 </div>
 
@@ -116,17 +117,17 @@
     <div class="container program-container">
         <h2>Программа</h2>
         <ul class="program">
-            <li><span>01</span><p>17:30 — Сбор гостей, знакомство, фуршет</p></li>
-            <li><span>02</span><p>18:30 — Церемония у входа в усадьбу</p></li>
-            <li><span>03</span><p>19:00 — Ужин</p></li>
-            <li><span>04</span><p>23:00 — ДиСкОтЕкА</p></li>
-            <li><span>05</span><p>24:00 — По домам, дохлёбываем и расход</p></li>
+            <li><p>17:30 — Сбор гостей, знакомство, фуршет</p></li>
+            <li><p>18:30 — Церемония у входа в усадьбу</p></li>
+            <li><p>19:30 — Банкет</p></li>
+            <li><p>23:00 — Танцы для тех, кто еще на ногах</p></li>
+            <li><p>24:00 — Завершение вечера</p></li>
         </ul>
     </div>
 </section>
 
 <!-- ЛОКАЦИЯ -->
-<section class="section reveal">
+<section class="section-location reveal">
     <div class="container">
         <h2>Локация</h2>
         <p>Roden Manor, Старосадский переулок, 5/8, Москва</p>
