@@ -540,7 +540,7 @@ footer {
     .program-section::before {
         left: 0;
         bottom: 0;
-        transform: translate(-40px, 30px) rotate(-35deg) scaleX(1);
+        transform: translate(-40px, 60px) rotate(35deg) scaleX(-1);
     }
 
     /* Локация */
@@ -550,5 +550,6 @@ footer {
         transform: translate(40px, -20px) rotate(-35deg) scaleX(-1);
     }
 }
+
 
 
