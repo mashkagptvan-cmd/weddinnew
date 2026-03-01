@@ -39,7 +39,8 @@ body {
 ===================================================== */
 
 .hero {
-    background: linear-gradient(180deg, #430D0C 0%, #430D0C 100%);
+    background: url("images/intropic.jpg") center / cover no-repeat;
+    background-position: center center;
     padding: 120px 20px 90px;
     text-align: center;
 }
@@ -550,6 +551,7 @@ footer {
         transform: translate(40px, -60px) rotate(-35deg) scaleX(-1);
     }
 }
+
 
 
 
